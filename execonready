@@ -20,7 +20,7 @@ fi
 addrs="$(env | grep '_PORT=' | egrep -v 'TCP|UDP' | cut -d = -f 2 | sort -u)"
 
 # empty ports variable will default to checking for exactly one port
-if [ -z "$ports" ]; then
+if [ -z "$addrs" ]; then
     echo 'no linked ports to wait for'
     exec "$@"
 fi
