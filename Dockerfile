@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y \
 		cdbs coffeescript curl debhelper devscripts dpkg-sig \
 		gettext gfortran git graphviz-dev libblas-dev \
 		libcairo2-dev libcurl4-gnutls-dev libevent-dev libffi-dev \
-		libjpeg8-dev liblapack-dev liblinear-dev libmemcached-dev \
+		libjpeg-dev liblapack-dev liblinear-dev libmemcached-dev \
 		libmysqlclient-dev libncurses5 libncurses5-dev \
 		libpng12-dev libprotobuf-dev libprotoc-dev libqhull-dev \
 		libsqlite3-dev libsvm-dev libxml2-dev libxslt-dev \
@@ -15,9 +15,9 @@ RUN apt-get update && apt-get install -y \
 		python-virtualenv uuid-dev virtualenv xmlto yui-compressor \
 	--no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \
-	&& mkdir -p /srv
+	&& mkdir -p /srv/src
 
-WORKDIR /srv
+WORKDIR /srv/src
 
-ONBUILD COPY . /srv
+ONBUILD COPY . /srv/src
 ONBUILD RUN make
