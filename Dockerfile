@@ -13,9 +13,12 @@ RUN apt-get update && apt-get install -y \
 		pwgen python2.7 python2.7-dev python-all-dev python-dbg \
 		python-dev python-mock python-pip python-support \
 		python-virtualenv uuid-dev virtualenv xmlto yui-compressor \
+		mysql-client netcat \
 	--no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& mkdir -p /srv/src
+
+COPY execonready /bin/execonready
 
 WORKDIR /srv/src
 
