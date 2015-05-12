@@ -1,5 +1,5 @@
 IMAGE ?= bpowers/dev-base
-TAG ?= v10
+TAG ?= v11
 
 all: build
 
