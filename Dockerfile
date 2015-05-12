@@ -26,7 +26,7 @@ RUN virtualenv /srv/env -q \
 	&& /srv/env/bin/easy_install -q -U pip
 
 # from github.com/bpowers/gosu:readyexec-1.0
-COPY gosu-amd64 /bin/readyexec
+COPY readyexec-amd64 /bin/readyexec
 
 # waits for docker-compose dependencies to be ready, then exec's CMD
 # as the socialcode user.
